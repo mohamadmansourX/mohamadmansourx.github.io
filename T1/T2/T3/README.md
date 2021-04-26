@@ -1,1 +1,1 @@
-[Python Inference](../../Test.py)
+[Python Inference](../../../Test.py)
