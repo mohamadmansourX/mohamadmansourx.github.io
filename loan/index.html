@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="en" dir="ltr"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Housing loan helper · دليل القرض السكني</title>
+<meta name="description" content="Lebanon housing loans in plain words: what a loan really costs each month, who lends right now (Banque de l’Habitat, PCH, banks), and the rules. English and Arabic.">
+<link rel="canonical" href="https://mohamadmansourx.com/loan/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mohamadmansourx.com/loan/">
+<meta property="og:title" content="Housing loan helper · دليل القرض السكني">
+<meta property="og:description" content="What will my housing loan cost? Monthly payment, total interest, who lends now in Lebanon. English · العربية">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#173F32">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23173F32'/%3E%3Cpath d='M8 15l8-6 8 6M10 14v9h12v-9M14 23v-5h4v5' fill='none' stroke='%23F2F7F4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+ --bg:#EDF1EF;--card:#FFFFFF;--soft:#F4F7F5;--ink:#14231E;--mute:#5B6C66;--line:#D8E0DC;
+ --pri:#2B6A52;--hero:#173F32;--hero2:#1F5241;--int:#E0A019;--err:#B3261E;
+ --okb:#DCEFE6;--okt:#1E5A43;--wb:#FBEFD2;--wt:#7A5300;--nb:#F3DAD8;--nt:#8A1F17;
+ --yt:#8F6206;
+ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;
+ --bg:#0F1513;--card:#18201D;--soft:#1F2925;--ink:#E6EEEA;--mute:#94A49E;--line:#2A3531;
+ --pri:#58AE8C;--hero:#10302A;--hero2:#16403A;--int:#F0B43A;--err:#F2B8B5;
+ --okb:#1E3A2F;--okt:#9FD9BF;--wb:#3D3218;--wt:#F0CF83;--nb:#3E2020;--nt:#F2B8B5;--yt:#F0B43A}}
+:root[data-theme="dark"]{color-scheme:dark;
+ --bg:#0F1513;--card:#18201D;--soft:#1F2925;--ink:#E6EEEA;--mute:#94A49E;--line:#2A3531;
+ --pri:#58AE8C;--hero:#10302A;--hero2:#16403A;--int:#F0B43A;--err:#F2B8B5;
+ --okb:#1E3A2F;--okt:#9FD9BF;--wb:#3D3218;--wt:#F0CF83;--nb:#3E2020;--nt:#F2B8B5;--yt:#F0B43A}
+*{box-sizing:inherit}
+html{scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "IBM Plex Sans","IBM Plex Sans Arabic",system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;font-variant-numeric:tabular-nums;-webkit-text-size-adjust:100%}
+html[lang=ar] body{font-family:"IBM Plex Sans Arabic","IBM Plex Sans",system-ui,Tahoma,sans-serif;line-height:1.7}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--pri);outline-offset:2px}
+.ico{width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.2em}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- header / tabs ---------- */
+.hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.hdr-in{max-width:1120px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;flex:1;min-width:0;color:inherit;text-decoration:none}
+.brand .logo{width:34px;height:34px;border-radius:10px;background:var(--hero);color:#F2F7F4;display:grid;place-items:center;flex:none}
+.brand .logo .ico{width:20px;height:20px}
+.brand span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lang{flex:none;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:7px 14px;font-weight:600;font-size:15px;cursor:pointer;display:flex;gap:6px;align-items:center;min-height:40px}
+.tabs{display:flex;gap:4px}
+.tabs button{border:0;background:none;color:var(--mute);cursor:pointer;font-weight:600;border-radius:12px;display:flex;align-items:center;gap:8px}
+.tabs button .ico{width:20px;height:20px}
+.tabs button[aria-selected=true]{color:var(--ink);background:var(--card);box-shadow:inset 0 0 0 1px var(--line)}
+@media (min-width:900px){
+ .tabs{background:var(--soft);padding:4px;border-radius:14px;border:1px solid var(--line)}
+ .tabs button{padding:8px 14px;font-size:15px}
+}
+@media (max-width:899.98px){
+ .tabs{position:fixed;inset-inline:0;bottom:0;z-index:30;background:var(--card);border-top:1px solid var(--line);padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px));display:grid;grid-template-columns:repeat(4,1fr)}
+ .tabs button{flex-direction:column;gap:3px;padding:6px 2px;font-size:12px;white-space:nowrap;min-width:0;overflow:hidden;min-height:52px;justify-content:center}
+ .tabs button .ico{width:22px;height:22px}
+ .tabs button[aria-selected=true]{color:var(--pri);background:none;box-shadow:none}
+ main{padding-bottom:calc(92px + env(safe-area-inset-bottom,0px))!important}
+}
+
+/* ---------- layout ---------- */
+main{max-width:1120px;margin:0 auto;padding:20px 16px 40px}
+.view{display:none}.view.on{display:block;animation:fade .2s ease}
+@keyframes fade{from{opacity:.4}to{opacity:1}}
+.page-h{margin:0 0 18px}
+.page-h h1{margin:0;font-size:clamp(24px,3.2vw,32px);line-height:1.2;font-weight:700;letter-spacing:-.01em;text-wrap:balance}
+html[lang=ar] .page-h h1{letter-spacing:0}
+.page-h p{margin:6px 0 0;color:var(--mute);font-size:16px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;margin-bottom:14px}
+.box h2{margin:0 0 12px;font-size:18px;display:flex;align-items:center;gap:8px}
+.box h2 .ico{color:var(--pri)}
+.grid2{display:grid;gap:14px}
+.grid2>.box{margin:0}
+@media (min-width:900px){
+ .calc{display:grid;grid-template-columns:400px 1fr;gap:20px;align-items:start}
+ .calc .left{position:sticky;top:84px}
+ .grid2{grid-template-columns:1fr 1fr;align-items:start}
+ .span2{grid-column:1/-1}
+}
+
+/* ---------- inputs ---------- */
+.q{display:flex;align-items:center;gap:8px;font-weight:600;font-size:15px;margin:0 0 8px}
+.q .n{width:22px;height:22px;border-radius:50%;background:var(--ink);color:var(--card);display:grid;place-items:center;font-size:12px;flex:none}
+.sp{margin-top:18px}
+select{width:100%;height:52px;font-size:16px;font-weight:600;background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:0 12px;cursor:pointer}
+.stepper{display:flex;align-items:center;gap:8px}
+.stepper button{width:48px;height:48px;border-radius:12px;border:1px solid var(--line);background:var(--soft);font-size:22px;font-weight:600;cursor:pointer;flex:none;display:grid;place-items:center}
+.stepper button:active{transform:scale(.96)}
+.stepper input{flex:1;min-width:0;height:48px;text-align:center;font-size:21px;font-weight:700;background:transparent;border:1px solid var(--line);border-radius:12px}
+.hint{font-size:13.5px;color:var(--mute);margin-top:6px;text-align:center}
+.presets{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.presets button{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:5px 12px;font-size:14px;font-weight:600;cursor:pointer;min-height:36px}
+.presets button[aria-pressed=true]{background:var(--ink);color:var(--card);border-color:var(--ink)}
+.seg{display:flex;background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:3px;gap:3px}
+.seg button{flex:1;padding:9px 6px;border:0;background:transparent;color:var(--mute);cursor:pointer;border-radius:9px;font-size:15px;font-weight:600;min-height:42px}
+.seg button[aria-pressed=true]{background:var(--card);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08),inset 0 0 0 1px var(--line)}
+.err{color:var(--err);font-size:14px;margin-top:8px}
+.err:empty{display:none}
+.warn{display:flex;gap:8px;align-items:flex-start;margin-top:10px;font-size:14px;background:var(--wb);color:var(--wt);border-radius:10px;padding:9px 11px}
+.warn[hidden]{display:none}
+.warn .ico{margin-top:2px}
+input[type=range]{width:100%;accent-color:var(--pri);margin-top:12px;height:28px}
+
+/* lender info */
+.info{margin-top:10px;border-radius:12px;background:var(--soft);padding:12px 14px;border:1px solid var(--line)}
+.info .top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.info .rate{font-size:30px;font-weight:700;line-height:1.1}
+.info p{margin:6px 0 0;font-size:14.5px}
+.info .who{color:var(--mute);display:flex;gap:6px;align-items:flex-start}
+.info .who .ico{margin-top:3px}
+.info .srcs{margin-top:8px;display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:600;color:var(--pri);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 10px;text-decoration:none}
+.chip:hover{border-color:var(--pri)}
+.tag{display:inline-block;font-size:12.5px;font-weight:600;padding:3px 10px;border-radius:999px;white-space:nowrap}
+.ok{background:var(--okb);color:var(--okt)}.wait{background:var(--wb);color:var(--wt)}.no{background:var(--nb);color:var(--nt)}
+
+/* ---------- hero result ---------- */
+.hero{background:var(--hero);color:#F2F7F4;border-radius:20px;padding:22px;margin-bottom:14px}
+.hero .lbl{font-size:15px;opacity:.8}
+.hero .num{font-size:clamp(46px,9vw,68px);font-weight:700;line-height:1.05;margin:4px 0}
+.hero .term{font-size:16px;opacity:.9}
+.hero .row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.hero .row>div{background:rgba(255,255,255,.07);border-radius:12px;padding:10px 12px;min-width:0}
+.hero .row span{display:block;font-size:13px;opacity:.78}
+.hero .row b{font-size:21px}
+.hero .row .inc{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.hero .row .inc small{display:block;font-size:12.5px;opacity:.7}
+@media (min-width:1100px){.hero .row{grid-template-columns:1fr 1fr 1.2fr}.hero .row .inc{grid-column:auto;display:block}}
+.hero .amber{color:#F4C45A}
+.hero .fine{font-size:13px;opacity:.72;margin:12px 0 0}
+.acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.acts button,.acts a{display:inline-flex;align-items:center;gap:7px;border-radius:10px;padding:9px 14px;font-size:14.5px;font-weight:600;cursor:pointer;text-decoration:none;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.08);color:#F2F7F4;min-height:42px}
+.acts button:hover,.acts a:hover{background:rgba(255,255,255,.14)}
+.stack{display:flex;height:40px;border-radius:10px;overflow:hidden;margin:16px 0 8px}
+.stack div{display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;white-space:nowrap;overflow:hidden;transition:flex-basis .3s}
+.stack .i{background:var(--int);color:#1D2B2A}.stack .p{background:var(--pri);color:#fff}
+.hero .stack .p{background:#3E9B78}
+.key{display:flex;gap:16px;font-size:13.5px;color:var(--mute);flex-wrap:wrap}
+.hero .key{color:#CFE0D8}
+.key i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.big{font-size:17px;margin:14px 0 0;line-height:1.6}
+.big b{font-size:20px}
+.y{color:var(--yt)}.g{color:var(--pri)}
+.owe{display:flex;justify-content:space-between;font-size:15px;margin-top:14px}
+.owebar{height:10px;background:var(--soft);border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-top:6px}
+.owebar div{height:100%;background:var(--ink);transition:width .3s}
+details summary{cursor:pointer;font-weight:700;font-size:18px;list-style:none;display:flex;align-items:center;gap:8px}
+details summary .ico{color:var(--pri)}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"+";font-size:22px;color:var(--mute);font-weight:400;margin-inline-start:auto}
+details[open] summary::after{content:"−"}
+.note{font-size:14px;color:var(--mute);margin:10px 0 0}
+.years{display:grid;gap:4px;margin-top:10px}
+.yr{display:grid;grid-template-columns:64px 1fr 92px;gap:8px;align-items:center;border-radius:8px;padding:4px 6px;background:none;border:0;font-size:13.5px;text-align:start;cursor:pointer;min-height:30px}
+.yr:hover{background:var(--soft)}
+.yr[aria-current=true]{background:var(--soft);box-shadow:inset 0 0 0 1px var(--line)}
+.yr .bar{display:flex;height:16px;border-radius:4px;overflow:hidden}
+.yr .bar .i{background:var(--int)}.yr .bar .p{background:var(--pri)}
+.yr small{color:var(--mute);text-align:end}
+
+/* ---------- banks ---------- */
+.bank{display:grid;grid-template-columns:1fr auto;gap:6px 12px;align-items:center}
+.bank .name{font-weight:700;font-size:18px}
+.bank .rate{font-size:30px;font-weight:700;text-align:end;line-height:1}
+.bank .sub{grid-column:1/-1;font-size:14px;color:var(--mute);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.use{grid-column:1/-1;justify-self:start;margin-top:6px;font-size:15px;font-weight:600;border:0;background:var(--ink);color:var(--card);border-radius:10px;padding:9px 16px;cursor:pointer;min-height:42px}
+.cmp{display:grid;gap:12px}
+.cmp .row{display:grid;grid-template-columns:128px 1fr;gap:12px;align-items:center;font-size:14px}
+.cmp .row span{color:var(--mute);font-size:13px}
+.cmp .track{display:flex;height:28px;border-radius:7px;overflow:hidden}
+.cmp .track div{display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:700;white-space:nowrap;overflow:hidden}
+.cmp .p{background:var(--pri);color:#fff}.cmp .i{background:var(--int);color:#1D2B2A}
+@media (max-width:599.98px){.cmp .row{grid-template-columns:1fr;gap:4px}.cmp .row br{display:none}.cmp .row span{margin-inline-start:6px}}
+
+/* ---------- info pages ---------- */
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+@media (min-width:600px){.facts{grid-template-columns:repeat(3,1fr)}}
+.fact{background:var(--soft);border-radius:12px;padding:12px}
+.fact b{display:block;font-size:22px;line-height:1.2}
+.fact span{font-size:13px;color:var(--mute)}
+.list{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.list li{display:grid;grid-template-columns:30px 1fr;font-size:15.5px;align-items:start}
+.list li .ico{color:var(--pri);margin-top:3px}
+.tl{list-style:none;margin:0;padding:0;padding-inline-start:20px;border-inline-start:3px solid var(--line);display:grid;gap:14px}
+.tl li{position:relative;font-size:15px}
+.tl li::before{content:"";position:absolute;inset-inline-start:-28px;top:6px;width:13px;height:13px;border-radius:50%;background:var(--card);border:3px solid var(--pri)}
+.tl li.new::before{background:var(--pri)}
+.tl time{display:block;font-weight:700;font-size:13.5px;color:var(--mute)}
+.flow{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:14px;font-weight:600}
+.flow span{background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:8px 10px;display:inline-flex;gap:6px;align-items:center}
+.flow span .ico{color:var(--pri)}
+.flow i{font-style:normal;color:var(--mute)}
+.verdict{display:flex;gap:12px;align-items:flex-start}
+.verdict .v{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;flex:none}
+.verdict .v .ico{width:22px;height:22px}
+.verdict .v.yes{background:var(--okb);color:var(--okt)}.verdict .v.maybe{background:var(--wb);color:var(--wt)}
+.verdict p{margin:0}
+.srcl{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.srcl a{color:var(--pri);font-weight:600;text-decoration:none;display:inline-flex;gap:6px;align-items:flex-start}
+.srcl a .ico{margin-top:3px}
+.srcl a:hover{text-decoration:underline}
+.srcl small{display:block;color:var(--mute);font-size:13px;padding-inline-start:26px}
+.foot{text-align:center;font-size:13px;color:var(--mute);margin-top:20px}
+.foot a{color:inherit}
+.toast{position:fixed;inset-inline:0;bottom:calc(96px + env(safe-area-inset-bottom,0px));margin:0 auto;width:max-content;max-width:calc(100% - 32px);background:var(--ink);color:var(--card);padding:10px 16px;border-radius:12px;font-weight:600;font-size:15px;z-index:50;box-shadow:0 6px 20px rgba(0,0,0,.2)}
+@media (min-width:900px){.toast{bottom:24px}}
+@media (prefers-reduced-motion:reduce){.stack div,.owebar div{transition:none}.view.on{animation:none}}
+</style></head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7M5 10v10h14V10M10 20v-6h4v6"/></symbol>
+ <symbol id="i-calc" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></symbol>
+ <symbol id="i-bank" viewBox="0 0 24 24"><path d="M3 10l9-6 9 6M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20h18"/></symbol>
+ <symbol id="i-gov" viewBox="0 0 24 24"><path d="M12 3l8 5H4zM6 9v9M10 9v9M14 9v9M18 9v9M3 21h18M4 18h16"/></symbol>
+ <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></symbol>
+ <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+ <symbol id="i-chart" viewBox="0 0 24 24"><path d="M5 20V11M11 20V5M17 20v-7M3 20h18"/></symbol>
+ <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 4v16M5 7h14M8 20h8M5 7l-3 6a3 3 0 006 0zM19 7l-3 6a3 3 0 006 0z"/></symbol>
+ <symbol id="i-hash" viewBox="0 0 24 24"><path d="M4 9h16M4 15h16M10 3L8 21M16 3l-2 18"/></symbol>
+ <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/></symbol>
+ <symbol id="i-land" viewBox="0 0 24 24"><path d="M12 21v-6M6 15h12L12 4z"/><path d="M3 21h18"/></symbol>
+ <symbol id="i-new" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"/></symbol>
+ <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1"/></symbol>
+ <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.5 2.5 0 015 .3c0 1.6-2.5 2-2.5 3.6M12 17h.01"/></symbol>
+ <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></symbol>
+ <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+ <symbol id="i-note" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 13h7M9 17h5"/></symbol>
+ <symbol id="i-cash" viewBox="0 0 24 24"><rect x="2.5" y="6" width="19" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 9.5v.01M18 14.5v.01"/></symbol>
+ <symbol id="i-ruler" viewBox="0 0 24 24"><path d="M3 17L17 3l4 4L7 21zM7.5 12.5l2 2M10.5 9.5l2 2M13.5 6.5l2 2"/></symbol>
+ <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></symbol>
+ <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></symbol>
+ <symbol id="i-ban" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M5.7 5.7l12.6 12.6"/></symbol>
+ <symbol id="i-file" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM14 3v5h5"/><path d="M9 13l2 2 4-4"/></symbol>
+ <symbol id="i-tools" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 005.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></symbol>
+ <symbol id="i-pencil" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16zM13.5 6.5l4 4"/></symbol>
+ <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 011-1h10"/></symbol>
+ <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 01-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1121 11.5z"/></symbol>
+ <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5h.01"/></symbol>
+ <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M4 7h15a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2h11v3"/><path d="M17 13.5h.01"/></symbol>
+ <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></symbol>
+</svg>
+
+<header class="hdr"><div class="hdr-in">
+ <a class="brand" href="#calc" data-go="calc"><span class="logo"><svg class="ico"><use href="#i-home"/></svg></span><span data-i="app"></span></a>
+ <nav class="tabs" role="tablist" aria-label="Sections">
+  <button role="tab" id="tab-calc" aria-controls="v-calc" data-v="calc" aria-selected="true"><svg class="ico"><use href="#i-calc"/></svg><span data-i="tCalc"></span></button>
+  <button role="tab" id="tab-banks" aria-controls="v-banks" data-v="banks" aria-selected="false" tabindex="-1"><svg class="ico"><use href="#i-bank"/></svg><span data-i="tBanks"></span></button>
+  <button role="tab" id="tab-hab" aria-controls="v-hab" data-v="hab" aria-selected="false" tabindex="-1"><svg class="ico"><use href="#i-home"/></svg><span data-i="tHab"></span></button>
+  <button role="tab" id="tab-pch" aria-controls="v-pch" data-v="pch" aria-selected="false" tabindex="-1"><svg class="ico"><use href="#i-gov"/></svg><span data-i="tPch"></span></button>
+ </nav>
+ <button class="lang" id="langBtn" type="button"><svg class="ico"><use href="#i-globe"/></svg><span id="langTxt"></span></button>
+</div></header>
+
+<main>
+<!-- ================= CALCULATOR ================= -->
+<section class="view on" id="v-calc" role="tabpanel" aria-labelledby="tab-calc">
+ <div class="page-h"><h1 data-i="cTitle"></h1><p data-i="cSub"></p></div>
+ <div class="calc">
+  <div class="left">
+   <div class="box">
+    <label class="q" for="lender"><span class="n">1</span><span data-i="q1"></span></label>
+    <select id="lender"></select>
+    <div class="info" id="info"></div>
+    <div id="customBox" hidden class="sp">
+     <div class="stepper"><button type="button" data-t="rate" data-d="-0.25" data-a="dec">−</button><input id="rate" type="number" dir="ltr" value="5.75" step="0.25" min="0" max="30" inputmode="decimal" aria-labelledby="rateLbl"><button type="button" data-t="rate" data-d="0.25" data-a="inc">+</button></div>
+     <div class="hint" id="rateLbl" data-i="rateLbl"></div>
+    </div>
+
+    <label class="q sp" for="amt"><span class="n">2</span><span data-i="q2"></span></label>
+    <div class="stepper"><button type="button" data-t="amt" data-d="-5000" data-a="dec">−</button><input id="amt" type="number" dir="ltr" value="100000" step="5000" min="0" max="2000000" inputmode="numeric"><button type="button" data-t="amt" data-d="5000" data-a="inc">+</button></div>
+    <div class="hint" id="amtHint" dir="ltr"></div>
+    <div class="presets" id="amtPre" role="group"></div>
+
+    <div class="q sp"><span class="n">3</span><span data-i="q3"></span></div>
+    <div class="seg" role="group"><button type="button" id="mYears" aria-pressed="true" data-i="optY"></button><button type="button" id="mPay" aria-pressed="false" data-i="optP"></button></div>
+    <div id="yearsBox" style="margin-top:10px"><div class="stepper"><button type="button" data-t="yrs" data-d="-1" data-a="dec">−</button><input id="yrs" type="number" dir="ltr" value="20" min="1" max="40" inputmode="numeric" aria-labelledby="yrsLbl"><button type="button" data-t="yrs" data-d="1" data-a="inc">+</button></div><div class="hint" id="yrsLbl" data-i="yrsLbl"></div></div>
+    <div id="payBox" style="margin-top:10px" hidden><div class="stepper"><button type="button" data-t="pay" data-d="-50" data-a="dec">−</button><input id="pay" type="number" dir="ltr" value="700" step="50" min="0" inputmode="numeric" aria-labelledby="payLbl"><button type="button" data-t="pay" data-d="50" data-a="inc">+</button></div><div class="hint" id="payLbl" data-i="payLbl"></div></div>
+    <div class="err" id="err" role="alert"></div>
+    <div class="warn" id="termWarn" hidden><svg class="ico"><use href="#i-info"/></svg><span id="termWarnTxt"></span></div>
+   </div>
+  </div>
+
+  <div class="right">
+   <div class="hero" aria-live="polite">
+    <div class="lbl" data-i="hLbl"></div>
+    <div class="num" id="hPay" dir="ltr">–</div>
+    <div class="term" id="hTerm"></div>
+    <div class="row">
+     <div><span data-i="hTot"></span><b id="hTotV" dir="ltr"></b></div>
+     <div><span data-i="hInt"></span><b id="hIntV" class="amber" dir="ltr"></b></div>
+     <div class="inc"><div><span data-i="hInc"></span><small data-i="hIncN"></small></div><b id="hIncV" dir="ltr"></b></div>
+    </div>
+    <div class="stack"><div class="p" id="dP"></div><div class="i" id="dI"></div></div>
+    <div class="key"><span><i style="background:#3E9B78"></i><span data-i="kLoan"></span></span><span><i style="background:var(--int)"></i><span data-i="kInt"></span></span></div>
+    <p class="fine" data-i="hFine"></p>
+    <div class="acts">
+     <a id="waBtn" target="_blank" rel="noopener"><svg class="ico"><use href="#i-chat"/></svg><span data-i="shareWa"></span></a>
+     <button type="button" id="copyBtn"><svg class="ico"><use href="#i-copy"/></svg><span data-i="copy"></span></button>
+    </div>
+   </div>
+
+   <div class="box">
+    <h2><svg class="ico"><use href="#i-cal"/></svg><span data-i="mTitle"></span></h2>
+    <div class="stepper"><button type="button" data-t="mon" data-d="-1" data-a="dec">−</button><input id="mon" type="number" dir="ltr" value="1" min="1" inputmode="numeric" aria-labelledby="monLbl"><button type="button" data-t="mon" data-d="1" data-a="inc">+</button></div>
+    <span class="sr" id="monLbl" data-i="mTitle"></span>
+    <input type="range" id="monR" min="1" value="1" aria-labelledby="monLbl">
+    <p class="big" id="mText"></p>
+    <div class="stack"><div class="i" id="bI"></div><div class="p" id="bP"></div></div>
+    <div class="owe"><span data-i="owed"></span><b id="oweV" dir="ltr"></b></div>
+    <div class="owebar"><div id="oweB"></div></div>
+   </div>
+
+   <details class="box" id="yby">
+    <summary><svg class="ico"><use href="#i-chart"/></svg><span data-i="yby"></span></summary>
+    <p class="note" data-i="ybyNote"></p>
+    <div class="years" id="years"></div>
+   </details>
+  </div>
+ </div>
+</section>
+
+<!-- ================= BANKS ================= -->
+<section class="view" id="v-banks" role="tabpanel" aria-labelledby="tab-banks">
+ <div class="page-h"><h1 data-i="bTitle"></h1><p data-i="bSub"></p></div>
+ <div class="grid2" id="bankCards"></div>
+ <div class="box" style="margin-top:14px">
+  <h2><svg class="ico"><use href="#i-scale"/></svg><span data-i="cmpT"></span></h2>
+  <div class="cmp" id="cmp"></div>
+  <div class="key" style="margin-top:12px"><span><i style="background:var(--pri)"></i><span data-i="kLoan"></span></span><span><i style="background:var(--int)"></i><span data-i="kInt"></span></span></div>
+  <p class="note" data-i="cmpN"></p>
+ </div>
+</section>
+
+<!-- ================= HABITAT ================= -->
+<section class="view" id="v-hab" role="tabpanel" aria-labelledby="tab-hab">
+ <div class="page-h"><h1 data-i="hbTitle"></h1><p data-i="hbSub"></p></div>
+ <div class="grid2">
+  <div class="box span2"><h2><svg class="ico"><use href="#i-hash"/></svg><span data-i="keyN"></span></h2><div class="facts" id="habFacts"></div></div>
+  <div class="box"><h2><svg class="ico"><use href="#i-list"/></svg><span data-i="rules"></span></h2><ul class="list" id="habRules"></ul></div>
+  <div>
+   <div class="box"><h2><svg class="ico"><use href="#i-land"/></svg><span data-i="land"></span></h2><div class="verdict"><span class="v yes"><svg class="ico"><use href="#i-check"/></svg></span><p data-i="habLand"></p></div></div>
+   <div class="box" style="margin:0"><h2><svg class="ico"><use href="#i-new"/></svg><span data-i="recent"></span></h2><ol class="tl" id="habTl"></ol><p class="note" data-i="habNote"></p></div>
+  </div>
+  <div class="box span2"><h2><svg class="ico"><use href="#i-link"/></svg><span data-i="srcT"></span></h2><ul class="srcl" id="habSrc"></ul></div>
+ </div>
+</section>
+
+<!-- ================= PCH ================= -->
+<section class="view" id="v-pch" role="tabpanel" aria-labelledby="tab-pch">
+ <div class="page-h"><h1 data-i="pTitle"></h1><p data-i="pSub"></p></div>
+ <div class="grid2">
+  <div class="box span2"><h2><svg class="ico"><use href="#i-help"/></svg><span data-i="whatIs"></span></h2><p style="margin:0 0 12px" data-i="whatTxt"></p><div class="flow" id="flow"></div></div>
+  <div class="box span2"><h2><svg class="ico"><use href="#i-note"/></svg><span data-i="planned"></span></h2><div class="facts" id="pchFacts"></div><ul class="list sp" id="pchPts"></ul><p class="note" data-i="pchNote"></p></div>
+  <div class="box"><h2><svg class="ico"><use href="#i-land"/></svg><span data-i="land"></span></h2><div class="verdict"><span class="v maybe"><svg class="ico"><use href="#i-help"/></svg></span><p data-i="pchLand"></p></div></div>
+  <div class="box"><h2><svg class="ico"><use href="#i-clock"/></svg><span data-i="tlT"></span></h2><ol class="tl" id="pchTl"></ol></div>
+  <div class="box span2"><h2><svg class="ico"><use href="#i-link"/></svg><span data-i="srcT"></span></h2><ul class="srcl" id="pchSrc"></ul></div>
+ </div>
+</section>
+
+<p class="foot"><span data-i="foot"></span><br><a href="/">mohamadmansourx.com</a></p>
+</main>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+const $=id=>document.getElementById(id);
+const qa=s=>document.querySelectorAll(s);
+const ic=n=>`<svg class="ico" aria-hidden="true"><use href="#i-${n}"/></svg>`;
+const Q=new URLSearchParams(location.search);
+let lang='en';
+try{const s=localStorage.getItem('loanLang');if(s)lang=s;else if((navigator.language||'').startsWith('ar'))lang='ar';}catch(e){}
+if(Q.get('lang')==='ar'||Q.get('lang')==='en')lang=Q.get('lang');
+const L=x=>x==null?'':typeof x==='string'?x:(x[lang]??x.en);
+const f0=n=>'$'+Math.round(n).toLocaleString('en-US');
+
+/* ---------------- strings ---------------- */
+const T={
+ app:{en:'Housing loan helper',ar:'دليل القرض السكني'},
+ tCalc:{en:'Calculator',ar:'الحاسبة'},tBanks:{en:'Banks',ar:'المصارف'},tHab:{en:'Habitat',ar:'مصرف الإسكان'},tPch:{en:'PCH',ar:'المؤسسة'},
+ cTitle:{en:'What will my loan cost?',ar:'كم سيكلّفني القرض؟'},
+ cSub:{en:'Pick a lender, set the amount, and see where every dollar goes.',ar:'اختر الجهة المُقرِضة، حدّد المبلغ، وشاهد أين يذهب كل دولار.'},
+ q1:{en:'Lender & interest rate',ar:'الجهة المُقرِضة والفائدة'},
+ q2:{en:'Amount you borrow ($)',ar:'المبلغ الذي تقترضه ($)'},
+ q3:{en:'What do you want to set?',ar:'ماذا تريد أن تحدّد؟'},
+ optY:{en:'Number of years',ar:'عدد السنوات'},optP:{en:'Monthly payment',ar:'القسط الشهري'},
+ rateLbl:{en:'Yearly interest rate (%)',ar:'الفائدة السنوية (%)'},
+ yrsLbl:{en:'Years to pay it back',ar:'عدد سنوات السداد'},
+ payLbl:{en:'What you can pay each month ($)',ar:'ما تستطيع دفعه شهرياً ($)'},
+ hLbl:{en:'You pay every month',ar:'تدفع كل شهر'},
+ hTot:{en:'Total you pay',ar:'المجموع الذي تدفعه'},hInt:{en:'Of which interest',ar:'منها فوائد'},
+ hInc:{en:'Family income needed',ar:'دخل العائلة المطلوب'},
+ hIncN:{en:'So the payment stays ≤ 33% of income (Habitat rule)',ar:'كي لا يتجاوز القسط 33% من الدخل (شرط مصرف الإسكان)'},
+ hFine:{en:'Life + fire insurance comes on top of this payment. Estimates only.',ar:'يُضاف تأمين الحياة وضدّ الحريق إلى هذا القسط. الأرقام تقديرية.'},
+ shareWa:{en:'Send on WhatsApp',ar:'أرسل عبر واتساب'},
+ copy:{en:'Copy link',ar:'انسخ الرابط'},
+ copied:{en:'Link copied. It opens with these numbers.',ar:'تمّ نسخ الرابط، ويفتح بهذه الأرقام.'},
+ copyFail:{en:'Couldn’t copy. Copy the address bar instead.',ar:'تعذّر النسخ. انسخ الرابط من شريط العنوان.'},
+ kLoan:{en:'The loan',ar:'أصل القرض'},kInt:{en:'Interest (extra to the bank)',ar:'الفائدة (زيادة للمصرف)'},
+ mTitle:{en:'Look inside any month',ar:'تفاصيل أي شهر'},
+ owed:{en:'Still owed after this month',ar:'المتبقّي عليك بعد هذا الشهر'},
+ yby:{en:'Year by year',ar:'سنة بسنة'},
+ ybyNote:{en:'Yellow (bank) shrinks, green (your debt) grows. Tap a year.',ar:'الأصفر (المصرف) يتقلّص والأخضر (دينك) يكبر. اضغط على أي سنة.'},
+ bTitle:{en:'Who lends right now?',ar:'من يُقرض حالياً؟'},
+ bSub:{en:'Tap “Use this” to try any lender in the calculator.',ar:'اضغط «جرّب هذا» لتجربة أي جهة في الحاسبة.'},
+ cmpT:{en:'$100k — total cost side by side',ar:'100 ألف دولار — الكلفة الإجمالية جنباً إلى جنب'},
+ cmpN:{en:'Longer loan = smaller monthly payment, but a lot more interest.',ar:'مدة أطول = قسط أصغر، لكن فوائد أكثر بكثير.'},
+ hbTitle:{en:'Banque de l’Habitat',ar:'مصرف الإسكان'},
+ hbSub:{en:'مصرف الإسكان · the only housing lender open right now',ar:'Banque de l’Habitat · الجهة الوحيدة التي تمنح قروضاً سكنية حالياً'},
+ keyN:{en:'Key numbers',ar:'أرقام أساسية'},rules:{en:'Rules',ar:'الشروط'},
+ land:{en:'You own land, not an apartment?',ar:'تملك أرضاً وليس شقة؟'},
+ habLand:{en:'<b>Likely OK.</b> The rule is about owning a <b>built</b> property — bare land isn’t one. The bank also lends to <b>build</b> on your land.',ar:'<b>غالباً لا مشكلة.</b> الشرط يتعلّق بامتلاك عقار <b>مبني</b>، والأرض غير المبنية ليست كذلك. ويمنح المصرف أيضاً قروضاً <b>للبناء</b> على أرضك.'},
+ recent:{en:'What changed recently',ar:'آخر المستجدات'},
+ habNote:{en:'“30 years” comes from an interview; the bank’s website still says 20. Ask when you apply.',ar:'«30 سنة» ورد في مقابلة، بينما لا يزال موقع المصرف يذكر 20 سنة. اسأل عند التقديم.'},
+ srcT:{en:'Sources',ar:'المصادر'},
+ pTitle:{en:'PCH — Public Corporation for Housing',ar:'المؤسسة العامة للإسكان'},
+ pSub:{en:'المؤسسة العامة للإسكان · the state’s housing agency · loans expected early 2027',ar:'PCH · الجهة الحكومية للإسكان · عودة القروض متوقّعة مطلع 2027'},
+ whatIs:{en:'What is it?',ar:'ما هي المؤسسة؟'},
+ whatTxt:{en:'The government funds cheap housing loans. <b>Regular banks</b> hand them out and check who qualifies.',ar:'الدولة تموّل قروضاً سكنية ميسّرة، و<b>المصارف التجارية</b> تمنحها وتتحقّق من أهلية المقترضين.'},
+ planned:{en:'Planned terms',ar:'الشروط المقترحة'},
+ pchNote:{en:'Not final — PCH’s board still has to approve the rules.',ar:'غير نهائي — مجلس إدارة المؤسسة لم يُقرّ الشروط بعد.'},
+ pchLand:{en:'<b>Unclear.</b> Most reports say “apartment / home”. One says “property” (عقار), which could include land. Build loans are planned, so ask directly.',ar:'<b>غير واضح.</b> معظم التقارير تتحدث عن «شقة أو مسكن»، وأحدها ذكر «عقاراً» وقد يشمل الأرض. قروض البناء مطروحة، فاسأل مباشرة.'},
+ tlT:{en:'Timeline',ar:'التسلسل الزمني'},
+ foot:{en:'Not financial advice — confirm with the lender before deciding. Info as of 24 Sep 2026.',ar:'ليست نصيحة مالية — تأكّد من الجهة المُقرِضة قبل اتخاذ القرار. المعلومات حتى 24 أيلول 2026.'},
+ use:{en:'Use this →',ar:'← جرّب هذا'},
+ yr:{en:'years',ar:'سنة'},mo:{en:'months',ar:'شهر'},
+ forW:{en:'for',ar:'لمدة'},
+ yearW:{en:'Year',ar:'السنة'},
+ perMo:{en:'/mo',ar:'/شهر'},
+ dec:{en:'Decrease',ar:'إنقاص'},inc:{en:'Increase',ar:'زيادة'},
+ customInfo:{en:'Interest = the bank’s fee for lending you money. <b>The bank sets it</b>, not you. Enter an offer you received.',ar:'الفائدة = رسم يأخذه المصرف مقابل إقراضك المال. <b>المصرف يحدّدها</b>، لا أنت. أدخل عرضاً حصلت عليه.'},
+ waMsg:{en:'Housing loan: ',ar:'قرض سكني: '},
+};
+const t=k=>L(T[k]);
+
+/* ---------------- data ---------------- */
+const SRC={
+ lbd:{l:{en:'Lebanon Debate — rate cut to 5.75%',ar:'ليبانون ديبايت — خفض الفائدة إلى 5.75%'},d:{en:'Jul 2026',ar:'تموز 2026'},u:'https://www.lebanondebate.com/article/854720-%D8%AE%D8%A8%D8%B1-%D8%B3%D8%A7%D8%B1-%D9%84%D9%84%D9%85%D9%82%D8%AA%D8%B1%D8%B6%D9%8A%D9%86-%D9%82%D8%B1%D8%A7%D8%B1-%D8%AC%D8%AF%D9%8A%D8%AF-%D9%85%D9%86-%D9%85%D8%B5%D8%B1%D9%81-%D8%A7%D9%84%D8%A5%D8%B3%D9%83%D8%A7%D9%86'},
+ bh:{l:{en:'Banque de l’Habitat website — loan terms',ar:'موقع مصرف الإسكان — شروط القرض'},d:{en:'Official',ar:'رسمي'},u:'https://www.banque-habitat.com.lb/en/loans/purchase'},
+ ajz:{l:{en:'Al Jazeera — $100k & income rules',ar:'الجزيرة — قرض 100 ألف وشروط الدخل'},d:{en:'Sep 2025',ar:'أيلول 2025'},u:'https://www.ajnet.me/ebusiness/2025/9/22/israel-war-loan-lebanon-housing'},
+ hd1:{l:{en:'Al-Hadeel — new package & online platform',ar:'الهديل — حزمة قروض جديدة ومنصة إلكترونية'},d:{en:'Sep 2026',ar:'أيلول 2026'},u:'https://alhadeel.net/article/908741/'},
+ hd2:{l:{en:'Al-Hadeel — 886 files, rent-to-own plan',ar:'الهديل — 886 ملفاً وخطة الإيجار التملّكي'},d:{en:'May 2026',ar:'أيار 2026'},u:'https://alhadeel.net/article/868703/'},
+ mod:{l:{en:'Al-Modon — interview with PCH director',ar:'المدن — مقابلة مع مدير عام المؤسسة'},d:{en:'24 Sep 2026',ar:'24 أيلول 2026'},u:'https://www.almodon.com/economy/2026/09/24/%D9%81%D9%8A%D8%AF%D9%8A%D9%88-%D9%84%D8%AD%D9%88%D8%AF-%D9%84%D8%A7%D9%84%D9%85%D8%AF%D9%86-%D8%B9%D9%88%D8%AF%D8%A9-%D8%A7%D9%84%D9%82%D8%B1%D9%88%D8%B6-%D9%88%D8%A7%D9%84%D8%AA%D9%88%D8%AC%D9%87-%D9%84%D9%84%D8%A5%D9%8A%D8%AC%D8%A7%D8%B1-%D8%A7%D9%84%D8%AA%D9%85%D9%84%D9%83%D9%8A'},
+ uab:{l:{en:'Annahar (via Union of Arab Banks) — budget & conditions',ar:'النهار (عبر اتحاد المصارف العربية) — الموازنة والشروط'},d:{en:'Sep 2026',ar:'أيلول 2026'},u:'https://uabonline.org/arab-news/%D9%85%D9%88%D8%A7%D8%B2%D9%86%D8%A9-2027-%D8%AA%D8%B9%D9%8A%D8%AF-%D9%81%D8%AA%D8%AD-%D8%A8%D8%A7%D8%A8-%D8%A7%D9%84%D9%82%D8%B1%D9%88%D8%B6-%D8%A7%D9%84%D8%B3%D9%83%D9%86%D9%8A%D8%A9-100-%D8%A3/'},
+ l24:{l:{en:'Lebanon 24 (via Saida Online) — USD loans, eligibility',ar:'لبنان 24 (عبر صيدا أون لاين) — القروض بالدولار والأهلية'},d:{en:'Sep 2026',ar:'أيلول 2026'},u:'https://www.saidaonline.com/320675'},
+ aw:{l:{en:'Arab Window — the “property (عقار)” wording',ar:'نافذة العرب — عبارة «عقار»'},d:{en:'Sep 2026',ar:'أيلول 2026'},u:'https://www.arabwindow.net/economy/130721/%D8%A8%D8%B4%D8%B1%D9%89-%D8%A5%D9%84%D9%89-%D8%A7%D9%84%D9%84%D8%A8%D9%86%D8%A7%D9%86%D9%8A%D9%8A%D9%86-%D9%82%D8%B1%D9%88%D8%B6-%D8%A7%D9%84%D8%A5%D8%B3%D9%83%D8%A7%D9%86-%D8%AA%D8%B9%D9%88%D8%AF/'},
+ exe:{l:{en:'Executive Magazine — PCH history',ar:'إكزكيوتيف — تاريخ المؤسسة'},d:{en:'2018',ar:'2018'},u:'https://www.executive-magazine.com/economics-policy/lebanons-housing-authority-to-restart-subsidization-scheme'},
+ bob:{l:{en:'Bank of Beirut website — USD housing loan',ar:'موقع بنك بيروت — قرض سكني بالدولار'},d:{en:'Undated',ar:'غير مؤرّخ'},u:'https://www.bankofbeirut.com/en/Personal/loans/78/housing-loan-in-us$'},
+ byb:{l:{en:'Byblos Bank — loans page (no housing product listed)',ar:'بنك بيبلوس — صفحة القروض (لا قرض سكني حالياً)'},d:{en:'Checked Sep 2026',ar:'تمّ التحقق أيلول 2026'},u:'https://www.byblosbank.com/personal/loans/housing'},
+};
+const TAG={ok:['ok',{en:'Open now',ar:'متاح الآن'}],soon:['wait',{en:'Early 2027?',ar:'مطلع 2027؟'}],unc:['wait',{en:'Unconfirmed',ar:'غير مؤكّد'}],past:['no',{en:'Before Jul 2026',ar:'قبل تموز 2026'}],none:['no',{en:'No own loans',ar:'لا قروض خاصة'}]};
+/* maxY + maxNote: a soft warning when the chosen term goes past what the lender is known to offer */
+const HAB_MAX={en:'Banque de l’Habitat’s website says up to 20 years (30 was reported in Sep 2026). Ask when you apply.',ar:'موقع مصرف الإسكان يذكر 20 سنة كحدّ أقصى (وأُفيد بـ30 سنة في أيلول 2026). اسأل عند التقديم.'};
+const LENDERS=[
+ {id:'hab',rate:5.75,tag:'ok',maxY:20,maxNote:HAB_MAX,name:{en:'Banque de l’Habitat',ar:'مصرف الإسكان'},
+  what:{en:'Fresh-USD housing loans up to $100k. Rate cut from 6% to 5.75% on 1 July 2026.',ar:'قروض سكنية بالدولار النقدي حتى 100 ألف دولار. خُفّضت الفائدة من 6% إلى 5.75% في 1 تموز 2026.'},
+  who:{en:'Applies to: Banque de l’Habitat only.',ar:'ينطبق على: مصرف الإسكان فقط.'},src:['lbd','bh']},
+ {id:'pch',rate:3.5,tag:'soon',maxY:20,maxNote:{en:'PCH plan: up to 20 years (less if you’re older).',ar:'خطة المؤسسة: حتى 20 سنة (أقل حسب العمر).'},name:{en:'PCH (state program)',ar:'المؤسسة العامة للإسكان'},
+  what:{en:'Planned: up to $100k at 3.5% for up to 20 years — only if the 2027 budget passes.',ar:'مقترح: حتى 100 ألف دولار بفائدة 3.5% ولمدة تصل إلى 20 سنة — في حال إقرار موازنة 2027.'},
+  who:{en:'Applies to: loans handed out through regular banks (e.g. Byblos, BLOM).',ar:'ينطبق على: القروض الممنوحة عبر المصارف التجارية (مثل بيبلوس وبلوم).'},src:['mod','uab']},
+ {id:'bob',rate:8,tag:'unc',name:{en:'Bank of Beirut (USD)',ar:'بنك بيروت (بالدولار)'},
+  what:{en:'4.5% in year 1, then Beirut Reference Rate + 1%, minimum 8%. The calculator uses the 8% floor.',ar:'4.5% في السنة الأولى، ثم معدّل بيروت المرجعي + 1% بحدّ أدنى 8%. الحاسبة تستخدم 8%.'},
+  who:{en:'Applies to: Bank of Beirut only. Page is undated — call to confirm.',ar:'ينطبق على: بنك بيروت فقط. الصفحة غير مؤرّخة — اتصل للتأكد.'},src:['bob']},
+ {id:'hab6',rate:6,tag:'past',maxY:20,maxNote:HAB_MAX,name:{en:'Banque de l’Habitat — old rate',ar:'مصرف الإسكان — الفائدة السابقة'},
+  what:{en:'The rate until 30 June 2026. Compare to see what the cut saves you.',ar:'الفائدة المعتمدة حتى 30 حزيران 2026. قارن لترى كم يوفّر عليك التخفيض.'},
+  who:{en:'Applies to: Banque de l’Habitat (before July 2026).',ar:'ينطبق على: مصرف الإسكان (قبل تموز 2026).'},src:['bh']},
+ {id:'custom',rate:null,name:{en:'Type my own rate…',ar:'أدخل فائدة أخرى…'}}
+];
+const BANKS=[
+ {id:'hab',rate:'5.75%',tag:'ok',name:{en:'Banque de l’Habitat',ar:'مصرف الإسكان'},sub:{en:'Up to $100k · fresh USD',ar:'حتى 100 ألف دولار · دولار نقدي'},src:'lbd'},
+ {id:'pch',rate:'3.5%',tag:'soon',name:{en:'PCH, through banks',ar:'المؤسسة، عبر المصارف'},sub:{en:'Needs the 2027 budget to pass',ar:'بانتظار إقرار موازنة 2027'},src:'mod'},
+ {id:'bob',rate:'≥ 8%',tag:'unc',name:{en:'Bank of Beirut',ar:'بنك بيروت'},sub:{en:'4.5% year 1, then min 8%',ar:'4.5% السنة الأولى ثم 8% كحدّ أدنى'},src:'bob'},
+ {id:null,rate:'—',tag:'none',name:{en:'Byblos · Audi · BLOM',ar:'بيبلوس · عوده · بلوم'},sub:{en:'Will hand out PCH loans when they return',ar:'ستمنح قروض المؤسسة عند عودتها'},src:'byb'},
+];
+const HAB={
+ facts:[['5.75%',{en:'Rate since 1 Jul 2026',ar:'الفائدة منذ 1 تموز 2026'}],['$100k',{en:'Max loan',ar:'سقف القرض'}],['80%',{en:'Max of the home’s value',ar:'من قيمة المسكن كحدّ أقصى'}],['150 m²',{en:'Max home size',ar:'أقصى مساحة للمسكن'}],['$2.5k–5k',{en:'Family income for $100k',ar:'دخل العائلة لقرض 100 ألف'}],['25%',{en:'Minimum down payment',ar:'الدفعة الأولى كحدّ أدنى'}]],
+ rules:[['cash',{en:'Pay in fresh USD cash only',ar:'التسديد بالدولار النقدي فقط'}],['ruler',{en:'Installment ≤ 33% of your income',ar:'القسط لا يتجاوز 33% من الدخل'}],['lock',{en:'No early payoff in the first 7 years',ar:'لا تسديد مبكر خلال أول 7 سنوات'}],['shield',{en:'Life + fire insurance on top',ar:'تأمين على الحياة وضدّ الحريق إضافةً للقسط'}],['ban',{en:'You/your wife own no home · no past subsidized loan',ar:'ألّا تملك أنت أو زوجتك مسكناً · وألّا تكون استفدت من قرض مدعوم'}],['file',{en:'2+ years of steady work + proof of income',ar:'سنتا عمل على الأقل + إثبات دخل'}],['tools',{en:'Also loans to build & renovate',ar:'أيضاً قروض للبناء والترميم'}]],
+ tl:[[1,{en:'Sep 2026',ar:'أيلول 2026'},{en:'Online platform + hotline to apply. Reported up to 30 years.',ar:'منصة إلكترونية وخط ساخن لتقديم الطلبات. وأُفيد بمدة تصل إلى 30 سنة.'}],
+     [1,{en:'1 Jul 2026',ar:'1 تموز 2026'},{en:'Rate cut 6% → 5.75%.',ar:'خفض الفائدة من 6% إلى 5.75%.'}],
+     [0,{en:'May 2026',ar:'أيار 2026'},{en:'886 purchase loans ≈ $62.7M. Plans its own buildings + rent-to-own.',ar:'886 ملف شراء بنحو 62.7 مليون دولار. خطة لبناء وحدات خاصة والإيجار التملّكي.'}],
+     [0,{en:'Feb 2026',ar:'شباط 2026'},{en:'New LBP renovation loan over 10 years.',ar:'قرض ترميم جديد بالليرة على 10 سنوات.'}],
+     [0,{en:'2025',ar:'2025'},{en:'Max loan raised to $100k.',ar:'رفع سقف القرض إلى 100 ألف دولار.'}]],
+ src:['bh','lbd','ajz','hd1','hd2']
+};
+const PCH={
+ facts:[['3.5%',{en:'Interest rate',ar:'الفائدة'}],['$100k',{en:'Max loan',ar:'سقف القرض'}],[{en:'20 yrs',ar:'20 سنة'},{en:'Max term (less if older)',ar:'أقصى مدة (أقل حسب العمر)'}],['~$580',{en:'Monthly on $100k + insurance',ar:'شهرياً لـ100 ألف + التأمين'}],['~$1.7k',{en:'Family income needed',ar:'دخل العائلة المطلوب'}],['$3–3.5k',{en:'Income cap (being discussed)',ar:'سقف الدخل (قيد البحث)'}]],
+ pts:[['cash',{en:'Borrow and repay in USD',ar:'الاقتراض والتسديد بالدولار'}],['tools',{en:'Buy · build · renovate · finish building',ar:'شراء · بناء · ترميم · استكمال بناء'}],['ban',{en:'Excluded: past housing loan · you/wife own a home · high income',ar:'مستبعَد: من استفاد سابقاً من قرض سكني · من يملك مسكناً هو أو زوجته · أصحاب الدخل المرتفع'}]],
+ flow:[['gov',{en:'State budget',ar:'موازنة الدولة'}],['home',{en:'PCH',ar:'المؤسسة'}],['bank',{en:'Byblos, BLOM…',ar:'بيبلوس، بلوم…'}],['user',{en:'You',ar:'أنت'}]],
+ tl:[[0,{en:'Before 2018',ar:'قبل 2018'},{en:'~5,000 loans a year, average ≈ $126k.',ar:'نحو 5,000 قرض سنوياً بمتوسط 126 ألف دولار.'}],
+     [0,{en:'Jul 2018',ar:'تموز 2018'},{en:'Subsidy money ran out → applications stopped.',ar:'نفاد أموال الدعم ← توقّف قبول الطلبات.'}],
+     [0,{en:'2019–2026',ar:'<bdi dir="ltr">2019–2026</bdi>'},{en:'Frozen by the financial crash.',ar:'جمود بسبب الانهيار المالي.'}],
+     [1,{en:'Sep 2026',ar:'أيلول 2026'},{en:'$60M in the 2027 budget draft (PCH asked for $100M ≈ 1,400 loans).',ar:'60 مليون دولار في مشروع موازنة 2027 (طلبت المؤسسة 100 مليون ≈ 1,400 قرض).'}],
+     [1,{en:'Oct 2026',ar:'تشرين الأول 2026'},{en:'Rent-to-own program to restart.',ar:'إعادة إطلاق الإيجار التملّكي.'}],
+     [1,{en:'Early 2027',ar:'مطلع 2027'},{en:'Loans expected — if the budget passes.',ar:'عودة القروض متوقّعة — إذا أُقرّت الموازنة.'}]],
+ src:['mod','uab','l24','aw','exe']
+};
+const PRESETS=[50000,75000,100000];
+
+/* ---------------- state from the link ---------------- */
+let mode='years',rows=[],lender=LENDERS[0],view='calc';
+const num=(k,lo,hi)=>{const v=parseFloat(Q.get(k));return isFinite(v)&&v>=lo&&v<=hi?v:null};
+(()=>{const l=LENDERS.find(x=>x.id===Q.get('l'));if(l)lender=l;
+ const a=num('a',0,2e6);if(a!=null)$('amt').value=a;
+ const r=num('r',0,30);if(r!=null&&lender.id==='custom')$('rate').value=r;
+ const y=num('y',1,40);if(y!=null)$('yrs').value=Math.round(y);
+ const p=num('p',1,1e6);if(p!=null){$('pay').value=p;mode='pay';}
+ const h=location.hash.slice(1);if(['calc','banks','hab','pch'].includes(h))view=h;})();
+function syncURL(){
+ const u=new URLSearchParams();u.set('l',lender.id);u.set('a',+$('amt').value||0);
+ if(lender.id==='custom')u.set('r',+$('rate').value||0);
+ mode==='years'?u.set('y',+$('yrs').value||0):u.set('p',+$('pay').value||0);
+ if(lang==='ar')u.set('lang','ar');
+ try{history.replaceState(null,'','?'+u.toString()+(view==='calc'?'':'#'+view));}catch(e){}
+}
+
+/* ---------------- calculator ---------------- */
+function fillSelect(){$('lender').innerHTML=LENDERS.map(l=>`<option value="${l.id}">${l.rate!=null?l.rate+'% · ':''}${L(l.name)}</option>`).join('');$('lender').value=lender.id;}
+function showInfo(){
+ const l=lender;$('customBox').hidden=l.id!=='custom';
+ if(l.id!=='custom')$('rate').value=l.rate;
+ if(l.id==='custom'){$('info').innerHTML=`<p style="margin:0">${t('customInfo')}</p>`;return;}
+ const tg=TAG[l.tag];
+ $('info').innerHTML=`<div class="top"><span class="rate" dir="ltr">${l.rate}%</span><span class="tag ${tg[0]}">${L(tg[1])}</span></div>
+  <p>${L(l.what)}</p><p class="who">${ic('bank')}<span>${L(l.who)}</span></p>
+  <div class="srcs">${l.src.map(k=>`<a class="chip" target="_blank" rel="noopener" href="${SRC[k].u}">${ic('link')}${L(SRC[k].l)} · ${L(SRC[k].d)}</a>`).join('')}</div>`;
+}
+$('lender').onchange=()=>{lender=LENDERS.find(l=>l.id===$('lender').value);showInfo();build();};
+
+function termStr(n){const y=Math.floor(n/12),m=n%12;return [y?`${y} ${t('yr')}`:'',m?`${m} ${t('mo')}`:''].filter(Boolean).join(' + ');}
+function build(){
+ const P=Math.max(0,+$('amt').value||0),r=Math.max(0,+$('rate').value||0)/1200;let M,err='';
+ if(mode==='years'){const n=Math.min(40,Math.max(1,+$('yrs').value||1))*12;M=r?P*r/(1-Math.pow(1+r,-n)):P/n;}
+ else{M=+$('pay').value||0;if(P>0&&M<=P*r)err=lang==='ar'?`القسط منخفض جداً: يجب أن يتجاوز ${f0(P*r+1)} شهرياً وإلا لن ينخفض الدين.`:`Too low: pay more than ${f0(P*r+1)}/month or the debt never goes down.`;}
+ $('err').textContent=err;rows=[];
+ if(!err&&P>0&&M>0){let B=P;for(let m=1;B>0.005&&m<=1200;m++){const i=B*r;const p=Math.min(M-i,B);B-=p;rows.push({m,i,p,pay:i+p,B});}}
+ $('amtHint').textContent=P?f0(P):'';
+ qa('#amtPre button').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.v===P));
+ render();termWarn();syncURL();
+}
+function termWarn(){
+ const months=mode==='years'?(+$('yrs').value||0)*12:rows.length;
+ const over=lender.maxY&&months>lender.maxY*12;
+ $('termWarn').hidden=!over;if(over)$('termWarnTxt').textContent=L(lender.maxNote);
+}
+function render(){
+ const n=rows.length;
+ if(!n){['hPay','hTotV','hIntV','hIncV'].forEach(k=>$(k).textContent='–');$('hTerm').textContent='';$('mText').textContent='';$('years').innerHTML='';$('dP').textContent=$('dI').textContent='';shareLinks();return;}
+ const P=rows[0].B+rows[0].p,tI=rows.reduce((s,x)=>s+x.i,0),tot=P+tI;
+ $('hPay').textContent=f0(rows[0].pay);
+ $('hTerm').textContent=`${t('forW')} ${termStr(n)}`;
+ $('hTotV').textContent=f0(tot);$('hIntV').textContent=f0(tI);
+ $('hIncV').textContent='≥ '+f0(rows[0].pay/0.33)+t('perMo');
+ $('dP').style.flexBasis=100*P/tot+'%';$('dI').style.flexBasis=100*tI/tot+'%';
+ $('dP').textContent=P/tot>.16?f0(P):'';$('dI').textContent=tI/tot>.14?f0(tI):'';
+ [$('mon'),$('monR')].forEach(e=>e.max=n);if(+$('mon').value>n)$('mon').value=n;if(+$('mon').value<1)$('mon').value=1;
+ years();month();shareLinks();
+}
+function month(){
+ const k=+$('mon').value,x=rows[k-1];if(!x)return;$('monR').value=k;const P=rows[0].B+rows[0].p;const y=Math.ceil(k/12);
+ $('mText').innerHTML=lang==='ar'
+  ?`الشهر <b>${k}</b> · السنة ${y} — من قسطك البالغ <bdi dir="ltr">${f0(x.pay)}</bdi>:<br><span class="y"><b><bdi dir="ltr">${f0(x.i)}</bdi></b> تذهب للمصرف (فائدة)</span><br><span class="g"><b><bdi dir="ltr">${f0(x.p)}</bdi></b> تُسدِّد من دينك</span>`
+  :`Month <b>${k}</b> · year ${y} — of your ${f0(x.pay)}:<br><span class="y"><b>${f0(x.i)}</b> goes to the bank (interest)</span><br><span class="g"><b>${f0(x.p)}</b> pays off your debt</span>`;
+ const pi=100*x.i/x.pay;$('bI').style.flexBasis=pi+'%';$('bP').style.flexBasis=(100-pi)+'%';
+ $('bI').textContent=pi>16?f0(x.i):'';$('bP').textContent=pi<84?f0(x.p):'';
+ $('oweV').textContent=f0(x.B);$('oweB').style.width=100*x.B/P+'%';
+ qa('.yr').forEach(b=>b.setAttribute('aria-current',+b.dataset.y===y));
+}
+function years(){
+ const n=rows.length,ny=Math.ceil(n/12);let max=0;const Y=[];
+ for(let y=1;y<=ny;y++){const s=rows.slice((y-1)*12,y*12);const i=s.reduce((a,x)=>a+x.i,0),p=s.reduce((a,x)=>a+x.p,0);Y.push({y,i,p,B:s[s.length-1].B});max=Math.max(max,i+p);}
+ $('years').innerHTML=Y.map(o=>`<button type="button" class="yr" data-y="${o.y}"><span>${t('yearW')} ${o.y}</span><span class="bar" style="width:${100*(o.i+o.p)/max}%"><span class="i" style="flex-basis:${100*o.i/(o.i+o.p)}%"></span><span class="p" style="flex-basis:${100*o.p/(o.i+o.p)}%"></span></span><small dir="ltr">${f0(o.B)}</small></button>`).join('');
+ qa('.yr').forEach(b=>b.onclick=()=>{$('mon').value=(+b.dataset.y-1)*12+1;month();$('mon').scrollIntoView({behavior:'smooth',block:'center'});});
+}
+qa('[data-t]').forEach(b=>b.onclick=()=>{
+ const el=$(b.dataset.t);let v=(+el.value||0)+ +b.dataset.d;
+ if(el.min!=='')v=Math.max(+el.min,v);if(el.max!=='')v=Math.min(+el.max,v);v=Math.max(0,v);
+ el.value=Math.round(v*100)/100;b.dataset.t==='mon'?month():build();
+});
+$('monR').oninput=()=>{$('mon').value=$('monR').value;month();};
+function setMode(m){mode=m;$('mYears').setAttribute('aria-pressed',m==='years');$('mPay').setAttribute('aria-pressed',m==='pay');
+ $('yearsBox').hidden=m!=='years';$('payBox').hidden=m!=='pay';if(m==='pay'&&rows.length)$('pay').value=Math.round(rows[0].pay);build();}
+$('mYears').onclick=()=>setMode('years');$('mPay').onclick=()=>setMode('pay');
+['amt','rate','yrs','pay'].forEach(id=>$(id).oninput=build);$('mon').oninput=month;
+
+/* ---------------- share ---------------- */
+function summary(){
+ if(!rows.length)return location.href;
+ const P=rows[0].B+rows[0].p;
+ return t('waMsg')+`${f0(P)} · ${lender.id==='custom'?(+$('rate').value)+'%':L(lender.name)+' '+lender.rate+'%'} → ${f0(rows[0].pay)}${t('perMo')} ${t('forW')} ${termStr(rows.length)}\n`+location.href;
+}
+function shareLinks(){$('waBtn').href='https://wa.me/?text='+encodeURIComponent(summary());}
+function toast(msg){const e=$('toast');e.textContent=msg;e.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>e.hidden=true,2600);}
+$('copyBtn').onclick=async()=>{
+ try{await navigator.clipboard.writeText(location.href);toast(t('copied'));}
+ catch(e){try{const i=document.createElement('input');i.value=location.href;document.body.appendChild(i);i.select();const ok=document.execCommand('copy');i.remove();toast(ok?t('copied'):t('copyFail'));}catch(_){toast(t('copyFail'));}}
+};
+
+/* ---------------- tabs ---------------- */
+function go(v,focus){view=v;qa('.view').forEach(s=>s.classList.toggle('on',s.id==='v-'+v));
+ qa('.tabs button').forEach(b=>{const on=b.dataset.v===v;b.setAttribute('aria-selected',on);b.tabIndex=on?0:-1;if(on&&focus)b.focus();});
+ syncURL();window.scrollTo({top:0});}
+qa('.tabs button').forEach(b=>b.onclick=()=>go(b.dataset.v));
+document.querySelector('[data-go]').onclick=e=>{e.preventDefault();go('calc');};
+document.querySelector('.tabs').addEventListener('keydown',e=>{
+ const ids=['calc','banks','hab','pch'];let i=ids.indexOf(view);const rtl=document.documentElement.dir==='rtl';
+ if(e.key==='ArrowRight')i+=rtl?-1:1;else if(e.key==='ArrowLeft')i+=rtl?1:-1;else if(e.key==='Home')i=0;else if(e.key==='End')i=3;else return;
+ e.preventDefault();go(ids[(i+4)%4],true);});
+addEventListener('hashchange',()=>{const h=location.hash.slice(1);if(['calc','banks','hab','pch'].includes(h))go(h);});
+
+/* ---------------- other views ---------------- */
+function renderBanks(){
+ $('bankCards').innerHTML=BANKS.map(b=>{const tg=TAG[b.tag],s=SRC[b.src];return `<div class="box bank"><div class="name">${L(b.name)}</div><div class="rate" dir="ltr">${b.rate}</div>
+  <div class="sub"><span class="tag ${tg[0]}">${L(tg[1])}</span>${L(b.sub)}</div>
+  <div class="sub"><a class="chip" target="_blank" rel="noopener" href="${s.u}">${ic('link')}${L(s.l)}</a></div>
+  ${b.id?`<button type="button" class="use" data-id="${b.id}">${t('use')}</button>`:''}</div>`}).join('');
+ qa('.use').forEach(b=>b.onclick=()=>{lender=LENDERS.find(l=>l.id===b.dataset.id);$('lender').value=lender.id;if(mode!=='years')setMode('years');$('yrs').value=20;$('amt').value=100000;$('mon').value=1;showInfo();build();go('calc');});
+ const pay=(P,rt,y)=>{const r=rt/1200,n=y*12;return P*r/(1-Math.pow(1+r,-n))};
+ const opts=[[3.5,20,{en:'PCH',ar:'المؤسسة'}],[5.75,20,{en:'Habitat',ar:'الإسكان'}],[5.75,30,{en:'Habitat',ar:'الإسكان'}],[8,20,{en:'Bank of Beirut',ar:'بنك بيروت'}]];
+ const d=opts.map(([r,y,n])=>{const m=pay(1e5,r,y);return{r,y,n,m,i:m*y*12-1e5}});const max=Math.max(...d.map(x=>1e5+x.i));
+ $('cmp').innerHTML=d.map(x=>`<div class="row"><div><b dir="ltr">${f0(x.m)}</b>${t('perMo')}<br><span>${L(x.n)} · ${x.r}% · ${x.y} ${t('yr')}</span></div><div class="track" style="width:${100*(1e5+x.i)/max}%"><div class="p" style="flex-basis:${1e7/(1e5+x.i)}%"><bdi dir="ltr">$100k</bdi></div><div class="i" style="flex-basis:${100*x.i/(1e5+x.i)}%"><bdi dir="ltr">+${f0(x.i/1000)}k</bdi></div></div></div>`).join('');
+}
+const factsHTML=a=>a.map(([v,l])=>`<div class="fact"><b>${/[؀-ۿ]/.test(L(v))?L(v):'<bdi dir="ltr">'+L(v)+'</bdi>'}</b><span>${L(l)}</span></div>`).join('');
+const listHTML=a=>a.map(([i,l])=>`<li>${ic(i)}<span>${L(l)}</span></li>`).join('');
+const tlHTML=a=>a.map(([n,d,l])=>`<li${n?' class="new"':''}><time>${L(d)}</time>${L(l)}</li>`).join('');
+const srcHTML=a=>a.map(k=>`<li><a target="_blank" rel="noopener" href="${SRC[k].u}">${ic('link')}<span>${L(SRC[k].l)}</span></a><small>${L(SRC[k].d)}</small></li>`).join('');
+function renderInfo(){
+ $('habFacts').innerHTML=factsHTML(HAB.facts);$('habRules').innerHTML=listHTML(HAB.rules);$('habTl').innerHTML=tlHTML(HAB.tl);$('habSrc').innerHTML=srcHTML(HAB.src);
+ $('pchFacts').innerHTML=factsHTML(PCH.facts);$('pchPts').innerHTML=listHTML(PCH.pts);$('pchTl').innerHTML=tlHTML(PCH.tl);$('pchSrc').innerHTML=srcHTML(PCH.src);
+ $('flow').innerHTML=PCH.flow.map(([i,x])=>`<span>${ic(i)}${L(x)}</span>`).join(`<i>${lang==='ar'?'←':'→'}</i>`);
+}
+function renderPresets(){
+ $('amtPre').innerHTML=PRESETS.map(v=>`<button type="button" data-v="${v}" dir="ltr">$${v/1000}k</button>`).join('');
+ qa('#amtPre button').forEach(b=>b.onclick=()=>{$('amt').value=b.dataset.v;build();});
+}
+
+/* ---------------- language ---------------- */
+function applyLang(){
+ document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+ qa('[data-i]').forEach(e=>e.innerHTML=t(e.dataset.i));
+ qa('[data-a]').forEach(e=>e.setAttribute('aria-label',t(e.dataset.a)));
+ $('langTxt').textContent=lang==='ar'?'English':'العربية';
+ $('langBtn').setAttribute('aria-label',lang==='ar'?'Switch to English':'التبديل إلى العربية');
+ document.title=lang==='ar'?'دليل القرض السكني':'Housing loan helper';
+ fillSelect();showInfo();renderPresets();renderBanks();renderInfo();
+ if(mode==='pay'){$('mYears').setAttribute('aria-pressed',false);$('mPay').setAttribute('aria-pressed',true);$('yearsBox').hidden=true;$('payBox').hidden=false;}
+ build();
+}
+$('langBtn').onclick=()=>{lang=lang==='ar'?'en':'ar';try{localStorage.setItem('loanLang',lang)}catch(e){}applyLang();};
+if(matchMedia('(min-width:900px)').matches)$('yby').open=true;
+applyLang();
+if(view!=='calc')go(view);
+</script>
+</body></html>
