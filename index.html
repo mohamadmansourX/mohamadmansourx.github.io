@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mohamad Mansour — Machine learning researcher &amp; engineer</title>
-  <meta name="description" content="Mohamad Mansour is a machine learning researcher and engineer working on explainable AI, reinforcement learning and NLP, with research experience at the American University of Beirut and CYENS.">
+  <meta name="description" content="Mohamad Mansour is a machine learning researcher and engineer working on explainable AI, reinforcement learning and NLP. Currently building AI projects at Whish Money, with research experience at the American University of Beirut and CYENS.">
   <meta name="author" content="Mohamad Mansour">
   <meta name="robots" content="index, follow">
   <meta name="color-scheme" content="light dark">
@@ -45,6 +45,7 @@
     "name": "Mohamad Mansour",
     "url": "https://mohamadmansourx.com/",
     "jobTitle": "Machine learning researcher and engineer",
+    "worksFor": { "@type": "Organization", "name": "Whish Money", "url": "https://whish.money/" },
     "knowsAbout": ["Explainable AI", "Reinforcement learning", "Natural language processing", "Computer vision", "EEG signal analysis"],
     "sameAs": [
       "https://github.com/mohamadmansourX",
@@ -87,11 +88,15 @@
             <a class="btn btn--solid" href="mailto:moemansour03@gmail.com">Get in touch</a>
             <a class="btn" href="#work">Selected work <span aria-hidden="true">→</span></a>
           </div>
+          <p class="hero__now">
+            <span class="hero__now-dot" aria-hidden="true"></span>
+            <span><strong>Now:</strong> I’m working at <a href="https://whish.money/" target="_blank" rel="noopener">Whish Money</a> on internal AI projects. They’re not public, so they aren’t listed below; the work here is earlier.</span>
+          </p>
         </div>
 
         <figure class="hero__fig" aria-hidden="true">
           <canvas id="field"></canvas>
-          <figcaption><span class="fig__n">Fig. 0</span> Attention over a 14×14 grid. Move your cursor.</figcaption>
+          <figcaption><span class="fig__n">Fig. 0</span> A saliency map: brighter cells are where a model is “looking”. <span class="hover-only">Move your cursor to steer its attention.</span></figcaption>
         </figure>
       </div>
     </section>
@@ -106,9 +111,22 @@
 
         <ol class="works">
 
+          <li class="work work--now">
+            <div class="work__body">
+              <p class="work__meta">
+                <span class="work__date">Present</span>
+                <span class="work__kind">Project</span>
+                <a href="https://whish.money/" target="_blank" rel="noopener">Whish Money</a>
+              </p>
+              <h3 class="work__title">Internal AI projects</h3>
+              <p>AI projects I’m building at Whish Money. They’re internal, so there’s nothing public to show yet.</p>
+            </div>
+          </li>
+
           <li class="work">
             <div class="work__body">
               <p class="work__meta">
+                <time class="work__date" datetime="2023">2023</time>
                 <span class="work__kind">Paper</span>
                 <a href="https://aub.edu.lb/" target="_blank" rel="noopener">American University of Beirut</a>
               </p>
@@ -148,6 +166,7 @@
           <li class="work">
             <div class="work__body">
               <p class="work__meta">
+                <time class="work__date" datetime="2022">2022</time>
                 <span class="work__kind">Paper</span>
                 <a href="https://aub.edu.lb/" target="_blank" rel="noopener">American University of Beirut</a>
               </p>
@@ -178,36 +197,7 @@
           <li class="work">
             <div class="work__body">
               <p class="work__meta">
-                <span class="work__kind">Paper</span>
-                <a href="https://aub.edu.lb/" target="_blank" rel="noopener">American University of Beirut</a>
-              </p>
-              <h3 class="work__title">Explainable Model for EEG Seizure Detection</h3>
-              <p>An explainable EEG detection model that helps diagnose epilepsy while providing deeper information, including a ranking of the features that trigger a seizure prediction.</p>
-              <ul class="tags">
-                <li>Deep learning</li>
-                <li>Explainable AI</li>
-                <li>Feature extraction</li>
-                <li>TensorFlow</li>
-                <li>Python</li>
-              </ul>
-              <p class="work__links">
-                <a class="link" href="https://arxiv.org/abs/2009.12566" target="_blank" rel="noopener">Read the paper <span aria-hidden="true">↗</span></a>
-              </p>
-            </div>
-            <div class="work__figs">
-              <figure class="fig">
-                <a href="images/1.jpg" target="_blank" rel="noopener" aria-label="Open Figure 4 at full size">
-                  <img src="images/1.jpg" width="604" height="498" loading="lazy"
-                    alt="EEG recordings are turned into connectivity features and fed to a deep network for seizure prediction. The model weights are then evaluated to rank the features that trigger a seizure prediction.">
-                </a>
-                <figcaption><span class="fig__n">Fig. 4</span> From connectivity features to ranked seizure triggers.</figcaption>
-              </figure>
-            </div>
-          </li>
-
-          <li class="work">
-            <div class="work__body">
-              <p class="work__meta">
+                <time class="work__date" datetime="2021">2021</time>
                 <span class="work__kind">Research</span>
                 <a href="https://aub.edu.lb/" target="_blank" rel="noopener">American University of Beirut</a>
                 <span aria-hidden="true">·</span>
@@ -234,7 +224,7 @@
                     alt="The Habitat point-goal navigation task, as illustrated on aihabitat.org."
                     onerror="this.closest('figure').hidden=true">
                 </a>
-                <figcaption><span class="fig__n">Fig. 5</span> The Habitat point-goal navigation task, via aihabitat.org.</figcaption>
+                <figcaption><span class="fig__n">Fig. 4</span> The Habitat point-goal navigation task, via aihabitat.org.</figcaption>
               </figure>
             </div>
           </li>
@@ -242,36 +232,7 @@
           <li class="work">
             <div class="work__body">
               <p class="work__meta">
-                <span class="work__kind">Project</span>
-                <a href="https://aub.edu.lb/" target="_blank" rel="noopener">American University of Beirut</a>
-                <span aria-hidden="true">·</span>
-                <a href="https://www.asurion.com/" target="_blank" rel="noopener">Asurion</a>
-              </p>
-              <h3 class="work__title">Extracting Insights</h3>
-              <p>Classifying and extracting insights from reviews, using unsupervised data augmentation.</p>
-              <ul class="tags">
-                <li>Natural language processing</li>
-                <li>Unsupervised data augmentation</li>
-                <li>Python</li>
-                <li>Keras</li>
-                <li>scikit-learn</li>
-                <li>NLTK</li>
-              </ul>
-            </div>
-            <div class="work__figs">
-              <figure class="fig">
-                <a href="images/3.jpg" target="_blank" rel="noopener" aria-label="Open Figure 6 at full size">
-                  <img src="images/3.jpg" width="1191" height="610" loading="lazy"
-                    alt="A text preprocessing pipeline (remove non-alphabetic characters, lowercase, lemmatize, n-grams) above a diagram of unsupervised data augmentation with supervised and unsupervised consistency losses.">
-                </a>
-                <figcaption><span class="fig__n">Fig. 6</span> Review preprocessing and unsupervised data augmentation.</figcaption>
-              </figure>
-            </div>
-          </li>
-
-          <li class="work">
-            <div class="work__body">
-              <p class="work__meta">
+                <time class="work__date" datetime="2021">2021</time>
                 <span class="work__kind">Project</span>
               </p>
               <h3 class="work__title">Course Interactive Website</h3>
@@ -292,7 +253,69 @@
                   <img src="images/wb.webp" width="1012" height="807" loading="lazy"
                     alt="Screenshot of the HIST 273 course website home page, with a navigation bar and a grid of lecture tiles.">
                 </a>
-                <figcaption><span class="fig__n">Fig. 7</span> The course site’s home page.</figcaption>
+                <figcaption><span class="fig__n">Fig. 5</span> The course site’s home page.</figcaption>
+              </figure>
+            </div>
+          </li>
+
+          <li class="work">
+            <div class="work__body">
+              <p class="work__meta">
+                <time class="work__date" datetime="2020">2020</time>
+                <span class="work__kind">Paper</span>
+                <a href="https://aub.edu.lb/" target="_blank" rel="noopener">American University of Beirut</a>
+              </p>
+              <h3 class="work__title">Explainable Model for EEG Seizure Detection</h3>
+              <p>An explainable EEG detection model that helps diagnose epilepsy while providing deeper information, including a ranking of the features that trigger a seizure prediction.</p>
+              <ul class="tags">
+                <li>Deep learning</li>
+                <li>Explainable AI</li>
+                <li>Feature extraction</li>
+                <li>TensorFlow</li>
+                <li>Python</li>
+              </ul>
+              <p class="work__links">
+                <a class="link" href="https://arxiv.org/abs/2009.12566" target="_blank" rel="noopener">Read the paper <span aria-hidden="true">↗</span></a>
+              </p>
+            </div>
+            <div class="work__figs">
+              <figure class="fig">
+                <a href="images/1.jpg" target="_blank" rel="noopener" aria-label="Open Figure 6 at full size">
+                  <img src="images/1.jpg" width="604" height="498" loading="lazy"
+                    alt="EEG recordings are turned into connectivity features and fed to a deep network for seizure prediction. The model weights are then evaluated to rank the features that trigger a seizure prediction.">
+                </a>
+                <figcaption><span class="fig__n">Fig. 6</span> From connectivity features to ranked seizure triggers.</figcaption>
+              </figure>
+            </div>
+          </li>
+
+          <li class="work">
+            <div class="work__body">
+              <p class="work__meta">
+                <time class="work__date" datetime="2020">2020</time>
+                <span class="work__kind">Project</span>
+                <a href="https://aub.edu.lb/" target="_blank" rel="noopener">American University of Beirut</a>
+                <span aria-hidden="true">·</span>
+                <a href="https://www.asurion.com/" target="_blank" rel="noopener">Asurion</a>
+              </p>
+              <h3 class="work__title">Extracting Insights</h3>
+              <p>Classifying and extracting insights from reviews, using unsupervised data augmentation.</p>
+              <ul class="tags">
+                <li>Natural language processing</li>
+                <li>Unsupervised data augmentation</li>
+                <li>Python</li>
+                <li>Keras</li>
+                <li>scikit-learn</li>
+                <li>NLTK</li>
+              </ul>
+            </div>
+            <div class="work__figs">
+              <figure class="fig">
+                <a href="images/3.jpg" target="_blank" rel="noopener" aria-label="Open Figure 7 at full size">
+                  <img src="images/3.jpg" width="1191" height="610" loading="lazy"
+                    alt="A text preprocessing pipeline (remove non-alphabetic characters, lowercase, lemmatize, n-grams) above a diagram of unsupervised data augmentation with supervised and unsupervised consistency losses.">
+                </a>
+                <figcaption><span class="fig__n">Fig. 7</span> Review preprocessing and unsupervised data augmentation.</figcaption>
               </figure>
             </div>
           </li>
@@ -311,6 +334,12 @@
 
         <ul class="orgs">
           <li>
+            <a class="org" href="https://whish.money/" target="_blank" rel="noopener">
+              <span class="org__logo"><img src="images/whish.png" width="829" height="514" loading="lazy" alt=""><span class="org__now">Now</span></span>
+              <span class="org__name">Whish Money <span aria-hidden="true">↗</span></span>
+            </a>
+          </li>
+          <li>
             <a class="org" href="https://www.unescwa.org/" target="_blank" rel="noopener">
               <span class="org__logo"><img src="images/UNESCWA.png" width="500" height="500" loading="lazy" alt=""></span>
               <span class="org__name">United Nations ESCWA <span aria-hidden="true">↗</span></span>
@@ -326,12 +355,6 @@
             <a class="org" href="https://aub.edu.lb/" target="_blank" rel="noopener">
               <span class="org__logo"><img src="images/aub.png" width="276" height="183" loading="lazy" alt=""></span>
               <span class="org__name">American University of Beirut <span aria-hidden="true">↗</span></span>
-            </a>
-          </li>
-          <li>
-            <a class="org" href="https://whish.money/" target="_blank" rel="noopener">
-              <span class="org__logo"><img src="images/whish.png" width="829" height="514" loading="lazy" alt=""></span>
-              <span class="org__name">Whish Money <span aria-hidden="true">↗</span></span>
             </a>
           </li>
           <li>

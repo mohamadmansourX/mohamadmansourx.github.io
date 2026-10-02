@@ -298,7 +298,7 @@ em {
 /* ----- Hero ----- */
 
 .hero {
-  padding-block: clamp(3.5rem, 9vw, 7.5rem) clamp(4rem, 9vw, 8rem);
+  padding-block: clamp(2.5rem, 6vw, 5rem) clamp(4rem, 9vw, 8rem);
 }
 
 .hero__grid {
@@ -342,6 +342,41 @@ em {
   margin-top: 2.25rem;
 }
 
+.hero__now {
+  display: flex;
+  gap: .8rem;
+  max-width: 34rem;
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  font-size: .95rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+.hero__now strong {
+  color: var(--ink);
+}
+
+.hero__now a {
+  text-underline-offset: .2em;
+}
+
+.hero__now-dot {
+  flex: none;
+  width: .55rem;
+  height: .55rem;
+  margin-top: .5rem;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: now-pulse 2.4s ease-out infinite;
+}
+
+@keyframes now-pulse {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 50%, transparent); }
+  70%, 100% { box-shadow: 0 0 0 .6rem transparent; }
+}
+
 .hero__fig {
   display: none;
   width: min(100%, 26rem);
@@ -368,6 +403,12 @@ em {
   font-size: .74rem;
   line-height: 1.5;
   color: var(--muted);
+}
+
+@media (hover: none) {
+  .hover-only {
+    display: none;
+  }
 }
 
 .fig__n {
@@ -456,6 +497,13 @@ em {
   text-decoration-color: currentColor;
 }
 
+.work__date {
+  font-family: var(--mono);
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+
 .work__kind {
   padding: .15rem .55rem;
   border-radius: .3rem;
@@ -534,6 +582,25 @@ em {
   }
 }
 
+/* Current work: unnumbered ("00", like Fig. 0) and without a figure. */
+.work--now {
+  counter-increment: none;
+}
+
+.work--now .work__meta::before {
+  content: '00';
+}
+
+@media (min-width: 60rem) {
+  .work.work--now {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.work--now .work__body {
+  max-width: 40rem;
+}
+
 /* ----- Experience ----- */
 
 .orgs {
@@ -568,6 +635,21 @@ em {
   filter: grayscale(1);
   opacity: .8;
   transition: filter .3s, opacity .3s;
+}
+
+.org__now {
+  position: absolute;
+  top: .7rem;
+  left: .7rem;
+  padding: .15rem .5rem;
+  border-radius: .3rem;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--mono);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
 }
 
 .org:hover .org__logo {
@@ -693,5 +775,6 @@ em {
   *::before,
   *::after {
     transition: none !important;
+    animation: none !important;
   }
 }
