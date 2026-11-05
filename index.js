@@ -6,7 +6,7 @@
   if (!canvas || !canvas.getContext) return;
 
   const ctx = canvas.getContext('2d');
-  const hero = canvas.closest('.hero') || document.body;
+  const hero = canvas.closest('.paper') || document.body;
   const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const darkScheme = matchMedia('(prefers-color-scheme: dark)');
 
@@ -98,7 +98,15 @@
       Math.abs(pointer.tx - pointer.x) > .001 ||
       Math.abs(pointer.ty - pointer.y) > .001 ||
       Math.abs(pointer.tw - pointer.w) > .002;
-    frame = settling ? requestAnimationFrame(step) : 0;
+    if (settling) {
+      frame = requestAnimationFrame(step);
+    } else {
+      pointer.x = pointer.tx;
+      pointer.y = pointer.ty;
+      pointer.w = pointer.tw;
+      draw();
+      frame = 0;
+    }
   }
 
   function animate() {
