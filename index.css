@@ -1,41 +1,267 @@
+/* Black, one red, two fonts: the palette and type of the original site. */
+
+@font-face {
+  font-family: 'Jost';
+  src: url('fonts/Jost-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HK Grotesk';
+  src: url('fonts/HKGrotesk-Regular.woff') format('woff');
+  font-display: swap;
+}
+
 :root {
-  color-scheme: light dark;
+  color-scheme: dark;
+  --bg: #000;
+  --ink: #e5e5e6;
+  --strong: #f0e9f2;
+  --muted: #9a9a9c;
+  --line: #242323;
+  --red: #ff3258;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
-  max-width: 40rem;
-  margin: 3rem auto;
-  padding: 0 1.25rem;
-  font: 1.0625rem/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 4.5rem 1.5rem 6rem;
+  background: var(--bg);
+  color: var(--ink);
+  font: 1.0625rem/1.6 'HK Grotesk', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #555;
+  text-underline-offset: .2em;
+}
+
+a:hover {
+  color: var(--red);
+  text-decoration-color: var(--red);
+}
+
+:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
+}
+
+h1,
+h2 {
+  margin: 0;
+  font-family: 'Jost', system-ui, sans-serif;
+  font-weight: 400;
+  color: var(--strong);
 }
 
 h1 {
-  margin: 0 0 .25rem;
-  font-size: 1.75rem;
-  line-height: 1.2;
+  font-size: 2.75rem;
+  line-height: 1.05;
+  letter-spacing: -.01em;
 }
 
 h2 {
-  margin: 2.25rem 0 .5rem;
-  font-size: 1.1rem;
+  margin-top: 4rem;
+  font-size: 1.75rem;
+  line-height: 1.1;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 3.5rem;
+  height: 2px;
+  margin: .75rem 0 1.5rem;
+  background: var(--red);
 }
 
 p,
-ul {
-  margin: .5rem 0;
+ul,
+ol {
+  margin: 0;
+  padding: 0;
 }
 
+.mark {
+  display: block;
+  width: 2.5rem;
+  height: auto;
+  margin-bottom: 2rem;
+  color: var(--strong);
+}
+
+.role {
+  margin-top: .75rem;
+  font-family: 'Jost', system-ui, sans-serif;
+  font-size: 1.375rem;
+  color: var(--strong);
+}
+
+.now {
+  margin-top: 1.25rem;
+  padding-left: .9rem;
+  border-left: 2px solid var(--red);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem 1.25rem;
+  margin-top: 1.5rem;
+}
+
+ol,
 ul {
-  padding: 0;
   list-style: none;
 }
 
-li {
-  margin: .75rem 0;
+.row {
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr);
+  gap: 0 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.row:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.y {
+  font-family: 'Jost', system-ui, sans-serif;
+  color: var(--red);
+}
+
+.t {
+  color: var(--strong);
+  line-height: 1.4;
+}
+
+.t a {
+  text-decoration: none;
+}
+
+.t a:hover {
+  text-decoration: underline;
+}
+
+.m {
+  margin-top: .2rem;
+  color: var(--muted);
+  font-size: .975rem;
+}
+
+.m strong {
+  font-weight: 400;
+  color: var(--ink);
+}
+
+.note {
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: .925rem;
+}
+
+.plain li {
+  padding: .25rem 0 .25rem 5rem;
+}
+
+.plain .m {
+  display: inline;
+  margin: 0;
+}
+
+.orgs {
+  color: var(--muted);
+}
+
+.orgs a {
+  color: var(--ink);
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 2rem;
+  color: var(--muted);
 }
 
 video {
   display: block;
   width: 100%;
-  margin: 1.25rem 0;
+  margin: 2rem 0;
+  background: #000;
+  border: 1px solid var(--line);
+}
+
+.prose p + p {
+  margin-top: 1rem;
+}
+
+.team li {
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+  gap: 0 1rem;
+  padding: .45rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.team li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.team .m {
+  margin: 0;
+}
+
+@media (max-width: 34rem) {
+  body {
+    padding-top: 3rem;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  .row {
+    grid-template-columns: 3.25rem minmax(0, 1fr);
+    gap: 0 .75rem;
+  }
+
+  .plain li {
+    padding-left: 0;
+  }
+
+  .team li {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media print {
+  :root {
+    --bg: #fff;
+    --ink: #111;
+    --strong: #000;
+    --muted: #444;
+    --line: #bbb;
+    --red: #000;
+  }
+
+  body {
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  video {
+    display: none;
+  }
 }
